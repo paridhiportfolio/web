@@ -24,6 +24,9 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/paridhi-sinha-0a7a941a5/';
 const WHATSAPP_URL = 'https://wa.me/917804064032';
 const LOR_URL = 'https://drive.google.com/file/d/1crGrJ-4HrPP_kgptgFF-N0tqCCYne0nQ/view?usp=sharing';
 const ASIAN_BOSS_PLAYLIST = 'https://www.youtube.com/playlist?list=PLVLzqjWkt0FI';
+const ATLAS_EXPLORER_PLAYLIST = 'https://www.youtube.com/playlist?list=PLObwOTWRACGY';
+const NDTV_24X7_URL = 'https://youtu.be/6i5BSL_9skU?si=TJx4ffbEpToqDsH-&t=1247';
+const MRBEAST_VIDEO_URL = 'https://www.youtube.com/watch?v=2O8tkMrbWK0&list=PLVLzqjWkt0FI&index=6';
 
 const externalLinkProps = {
     target: '_blank',
@@ -92,6 +95,10 @@ const longFormGroups = [
         note: 'YouTube',
         links: [
             {
+                label: 'View Atlas Explorer long-form playlist',
+                href: ATLAS_EXPLORER_PLAYLIST
+            },
+            {
                 label: 'Stupid Reasons That Led Indians to Lose Rs 136 Crores on Schengen Visas',
                 href: 'https://youtu.be/WhI1gcgefk8?si=EWOB9fYrsXPaC0Uz'
             },
@@ -147,7 +154,7 @@ const longFormGroups = [
             },
             {
                 label: 'NDTV 24x7 - Fuel Price panel',
-                href: 'https://www.youtube.com/watch?v=6i5BSL_9skU&t=32s'
+                href: NDTV_24X7_URL
             },
             {
                 label: 'Indian Express - Video team contribution',
@@ -160,12 +167,8 @@ const longFormGroups = [
 const shortFormGroups = [
     {
         name: 'Atlas Explorer',
-        note: 'Playlist and selected reels',
+        note: 'Selected reels',
         links: [
-            {
-                label: 'Atlas Explorer shorts playlist',
-                href: 'https://www.youtube.com/playlist?list=PLObwOTWRACGY'
-            },
             {
                 label: 'Atlas Explorer reel 01',
                 href: 'https://www.instagram.com/reel/DJ4VP2loE0H/?igsh=d3JsaXQ1ZW9zaXpt'
@@ -299,7 +302,7 @@ const careerEntries = [
             },
             {
                 label: 'Watch NDTV 24x7',
-                href: 'https://www.youtube.com/watch?v=6i5BSL_9skU&t=32s'
+                href: NDTV_24X7_URL
             }
         ]
     }
@@ -484,42 +487,66 @@ const Hero = () => {
         <section id="top" className="hero-section">
             <div className="hero-glow animate-pulse-glow" aria-hidden="true" />
             <div className="container relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h1 className="hero-title">
-                        I scale <span>brands</span> from zero to millions.
-                    </h1>
+                <div className="hero-content-grid">
+                    <motion.div
+                        className="hero-content"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h1 className="hero-title">
+                            I scale <span>brands</span> from zero to millions.
+                        </h1>
 
-                    <p className="hero-copy">
-                        Built content for AirAsia, Cleartrip, Atlas, and Leverage Edu, owning everything end to end: research, scripting, and post-production. Took a brand from 0 to 600K followers through organic content alone, and built performance ads that drove real reach and revenue.
-                    </p>
+                        <p className="hero-copy">
+                            Built content for AirAsia, Cleartrip, Atlas, and Leverage Edu, owning everything end to end: research, scripting, and post-production. Took a brand from 0 to 600K followers through organic content alone, and built performance ads that drove real reach and revenue.
+                        </p>
 
-                    <div className="hero-actions flex flex-wrap gap-4 items-center">
-                        <a href="#experience" className="btn">
-                            View my work <ArrowUpRight size={16} />
-                        </a>
-                        <a
-                            href={WHATSAPP_URL}
-                            className="contact-pill"
-                            aria-label="Chat with Paridhi on WhatsApp at 7804064032"
-                            {...externalLinkProps}
-                        >
-                            <WhatsAppIcon size={18} />
-                            <span>WhatsApp</span>
-                        </a>
-                        <a
-                            href={LINKEDIN_URL}
-                            className="icon-button"
-                            aria-label="Visit Paridhi Sinha on LinkedIn"
-                            {...externalLinkProps}
-                        >
-                            <Linkedin size={19} />
-                        </a>
-                    </div>
-                </motion.div>
+                        <div className="hero-actions flex flex-wrap gap-4 items-center">
+                            <a href="#experience" className="btn">
+                                View my work <ArrowUpRight size={16} />
+                            </a>
+                            <a
+                                href={WHATSAPP_URL}
+                                className="contact-pill"
+                                aria-label="Chat with Paridhi on WhatsApp at 7804064032"
+                                {...externalLinkProps}
+                            >
+                                <WhatsAppIcon size={18} />
+                                <span>WhatsApp</span>
+                            </a>
+                            <a
+                                href={LINKEDIN_URL}
+                                className="icon-button"
+                                aria-label="Visit Paridhi Sinha on LinkedIn"
+                                {...externalLinkProps}
+                            >
+                                <Linkedin size={19} />
+                            </a>
+                        </div>
+                    </motion.div>
+
+                    <motion.a
+                        href="#video-work"
+                        className="hero-portrait-card"
+                        aria-label="Explore Paridhi's video portfolio"
+                        initial={{ opacity: 0, scale: 0.96 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.15 }}
+                    >
+                        <img
+                            src="/images/paridhi-portrait.jpeg"
+                            alt="Paridhi Sinha holding her YouTube Silver Creator Award"
+                            width="720"
+                            height="1280"
+                            fetchPriority="high"
+                        />
+                        <span className="hero-play-button" aria-hidden="true">
+                            <Play size={22} fill="currentColor" />
+                        </span>
+                        <span className="hero-play-label">Explore video work</span>
+                    </motion.a>
+                </div>
 
                 <motion.div
                     className="stats-grid"
@@ -632,7 +659,7 @@ const LatestExperience = () => (
                     <Briefcase size={14} aria-hidden="true" /> Subsidiary of Nas Daily
                 </p>
             </div>
-            <span className="tag">Jun 2026</span>
+            <span className="tag">June 2026</span>
         </div>
 
         <div className="role-timeline" aria-label="1000 Media role">
@@ -647,7 +674,7 @@ const LatestExperience = () => (
                     </li>
                     <li>
                         <span aria-hidden="true">•</span>
-                        Created hooks, scripts and carousel concepts for Meta campaigns
+                        Created hooks, scripts, and carousel concepts for Meta campaigns
                     </li>
                     <li>
                         <span aria-hidden="true">•</span>
@@ -664,13 +691,17 @@ const YaasExperience = () => {
     const roles = [
         {
             role: 'Senior Creative Lead',
-            period: 'May 2025 - Jul 2026',
+            period: 'May 2025 - June 2026',
             desc: 'Led organic content strategy and creative execution for travel and lifestyle brands.',
             highlights: [
                 'Created the company\'s top three most-viewed reels, including 30M- and 23M-view performers',
                 'Scaled Clearlytripping to 400K+ followers',
                 'Led Cleartrip\'s 11 Big Billion Days campaign across three ads'
-            ]
+            ],
+            cta: {
+                label: 'View Atlas Explorer playlist',
+                href: ATLAS_EXPLORER_PLAYLIST
+            }
         },
         {
             role: 'Creative Lead',
@@ -707,7 +738,7 @@ const YaasExperience = () => {
                         <MapPin size={14} aria-hidden="true" /> Bengaluru, India
                     </p>
                 </div>
-                <span className="tag">Aug 2024 - Jul 2026</span>
+                <span className="tag">Aug 2024 - June 2026</span>
             </div>
 
             <div className="role-timeline" aria-label="YAAS role progression">
@@ -726,6 +757,11 @@ const YaasExperience = () => {
                                 </li>
                             ))}
                         </ul>
+                        {role.cta && (
+                            <div className="role-cta">
+                                <LinkButton href={role.cta.href}>{role.cta.label}</LinkButton>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -765,7 +801,10 @@ const ClientExperience = () => {
         {
             company: 'Keyframe',
             role: 'AI-led content workflows',
-            desc: 'Managed AI-led content workflows from idea to final output and trained automation bots to turn rough ideas into publish-ready content faster.'
+            highlights: [
+                'Managed AI-led content workflows from idea to final output',
+                'Trained automation bots to take content from rough idea to publish-ready faster'
+            ]
         }
     ];
 
@@ -787,6 +826,16 @@ const ClientExperience = () => {
                         <p className="compact-role">{entry.role}</p>
                         {entry.period && <span className="compact-period">{entry.period}</span>}
                         {entry.desc && <p>{entry.desc}</p>}
+                        {entry.highlights && (
+                            <ul className="compact-highlight-list">
+                                {entry.highlights.map((highlight) => (
+                                    <li key={highlight}>
+                                        <span aria-hidden="true">•</span>
+                                        {highlight}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                 </motion.article>
             ))}
@@ -1094,25 +1143,52 @@ const Appreciation = () => (
                     </footer>
                 </motion.blockquote>
 
-                <motion.aside
-                    className="card lor-card"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.08 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="lor-icon">
-                        <FileText size={24} aria-hidden="true" />
-                    </div>
-                    <p className="company-kicker">Letter of recommendation</p>
-                    <h3>Read the full LOR</h3>
-                    <p>
-                        A detailed recommendation covering Paridhi's editorial judgment, creative execution and on-ground ownership.
-                    </p>
-                    <a href={LOR_URL} className="btn" {...externalLinkProps}>
-                        Open LOR <ExternalLink size={15} />
-                    </a>
-                </motion.aside>
+                <div className="appreciation-side-stack">
+                    <motion.a
+                        href={MRBEAST_VIDEO_URL}
+                        className="card mrbeast-card"
+                        aria-label="Watch the Asian Boss video noticed by MrBeast"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.08 }}
+                        viewport={{ once: true }}
+                        {...externalLinkProps}
+                    >
+                        <div className="mrbeast-image-wrap">
+                            <img
+                                src="/images/mrbeast-appreciation.png"
+                                alt="MrBeast commenting: Interesting video! Thank you"
+                                width="337"
+                                height="130"
+                                loading="lazy"
+                            />
+                            <span aria-hidden="true"><ExternalLink size={15} /></span>
+                        </div>
+                        <p className="company-kicker">Viral recognition</p>
+                        <h3>Noticed by MrBeast</h3>
+                        <p>Watch the Asian Boss video behind the comment.</p>
+                    </motion.a>
+
+                    <motion.aside
+                        className="card lor-card"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.12 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="lor-icon">
+                            <FileText size={24} aria-hidden="true" />
+                        </div>
+                        <p className="company-kicker">Letter of recommendation</p>
+                        <h3>Read the full LOR</h3>
+                        <p>
+                            A detailed recommendation covering Paridhi's editorial judgment, creative execution and on-ground ownership.
+                        </p>
+                        <a href={LOR_URL} className="btn" {...externalLinkProps}>
+                            Open LOR <ExternalLink size={15} />
+                        </a>
+                    </motion.aside>
+                </div>
             </div>
         </div>
     </section>
