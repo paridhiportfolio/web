@@ -459,9 +459,27 @@ section {
 
 /* Experience */
 
+.experience-company-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
 .company-card {
   overflow: hidden;
   padding: 0;
+}
+
+.latest-company-card {
+  border-color: rgba(255, 122, 71, 0.38);
+  box-shadow: 0 20px 70px rgba(255, 93, 135, 0.08);
+}
+
+.latest-company-card .company-card-header {
+  background:
+    radial-gradient(circle at top right, rgba(255, 93, 135, 0.2), transparent 48%),
+    linear-gradient(135deg, rgba(255, 122, 71, 0.06), transparent 55%),
+    var(--bg-card);
 }
 
 .company-card-header {

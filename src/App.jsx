@@ -331,9 +331,6 @@ const internships = [
 
 const projectEntries = [
     {
-        title: 'Keyframe'
-    },
-    {
         title: 'The Print Podcast',
         role: 'Interviewer',
         impact: '90K+ Reach',
@@ -620,35 +617,77 @@ const LinkButton = ({ href, children }) => (
     </a>
 );
 
+const LatestExperience = () => (
+    <motion.article
+        className="card company-card latest-company-card"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+    >
+        <div className="company-card-header">
+            <div>
+                <p className="company-kicker">Most recent role</p>
+                <h3>1000 Media</h3>
+                <p className="company-location">
+                    <Briefcase size={14} aria-hidden="true" /> Subsidiary of Nas Daily
+                </p>
+            </div>
+            <span className="tag">Jun 2026</span>
+        </div>
+
+        <div className="role-timeline" aria-label="1000 Media role">
+            <div className="role-entry">
+                <div className="role-heading">
+                    <h4>Content Lead</h4>
+                </div>
+                <ul>
+                    <li>
+                        <span aria-hidden="true">•</span>
+                        Built performance creatives focused on generating qualified leads for Leverage Edu
+                    </li>
+                    <li>
+                        <span aria-hidden="true">•</span>
+                        Created hooks, scripts and carousel concepts for Meta campaigns
+                    </li>
+                    <li>
+                        <span aria-hidden="true">•</span>
+                        Managed content production from research to final delivery
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </motion.article>
+);
+
 const YaasExperience = () => {
     const [activeVideoId, setActiveVideoId] = useState(null);
     const roles = [
         {
             role: 'Senior Creative Lead',
-            period: 'May 2025 - Present',
-            desc: 'Leading a 16-member team across content strategy, production and channel growth.',
+            period: 'May 2025 - Jul 2026',
+            desc: 'Led organic content strategy and creative execution for travel and lifestyle brands.',
             highlights: [
-                'Scaled Atlas Explorer from 0 to 600K followers through organic content',
-                'Grew YouTube to 200K subscribers',
-                'Expanded ownership across multiple travel and lifestyle IPs'
+                'Created the company\'s top three most-viewed reels, including 30M- and 23M-view performers',
+                'Scaled Clearlytripping to 400K+ followers',
+                'Led Cleartrip\'s 11 Big Billion Days campaign across three ads'
             ]
         },
         {
-            role: 'Channel Account Manager',
+            role: 'Creative Lead',
             period: 'Oct 2024 - Apr 2025',
-            desc: 'Owned Atlas Explorer end to end, from audience research and scripting to post-production.',
+            desc: 'Owned organic channel growth and team operations end to end.',
             highlights: [
-                'Wrote reels that reached 48M+ and 10M+ views',
-                'Reached the first 100K followers in 11 posts'
+                'Grew @letsplayatlys from 0 to 600K on Instagram and 200K on YouTube',
+                'Trained team members to manage pages end to end'
             ]
         },
         {
-            role: 'Scriptwriter & Content Operations Manager',
+            role: 'Content Operations Manager & Writer',
             period: 'Aug 2024 - Sep 2024',
-            desc: 'Built travel content and performance-led campaign work for Cleartrip.',
+            desc: 'Ran content production from scripting through on-ground execution.',
             highlights: [
-                'Helped scale Clearlytripping and produced high-performing organic reels',
-                'Created seven Cleartrip Big Billion Days ads, including 1M+ view campaign work'
+                'Took Clearlytripping from 0 to 100K+ followers in five months',
+                'Scripted and executed shoots end to end'
             ]
         }
     ];
@@ -662,13 +701,13 @@ const YaasExperience = () => {
         >
             <div className="company-card-header">
                 <div>
-                    <p className="company-kicker">Current</p>
+                    <p className="company-kicker">Previous role</p>
                     <h3>YAAS!</h3>
                     <p className="company-location">
                         <MapPin size={14} aria-hidden="true" /> Bengaluru, India
                     </p>
                 </div>
-                <span className="tag">Aug 2024 - Present</span>
+                <span className="tag">Aug 2024 - Jul 2026</span>
             </div>
 
             <div className="role-timeline" aria-label="YAAS role progression">
@@ -720,12 +759,13 @@ const ClientExperience = () => {
     const entries = [
         {
             company: 'AirAsia',
-            role: 'Campaign content with Asian Boss',
-            desc: 'Selected campaign work created for AirAsia in collaboration with Asian Boss.'
+            role: 'TikTok campaign content',
+            desc: 'Created ads for @airasiamove on TikTok, scripted the concepts and oversaw the edits.'
         },
         {
-            company: '1000 Media',
-            role: 'Selected client experience'
+            company: 'Keyframe',
+            role: 'AI-led content workflows',
+            desc: 'Managed AI-led content workflows from idea to final output and trained automation bots to turn rough ideas into publish-ready content faster.'
         }
     ];
 
@@ -805,7 +845,10 @@ const Experience = () => (
             <p className="section-subtitle">Career</p>
             <h2 className="section-title">Experience</h2>
 
-            <YaasExperience />
+            <div className="experience-company-stack">
+                <LatestExperience />
+                <YaasExperience />
+            </div>
 
             <div className="section-block">
                 <div className="minor-heading">
